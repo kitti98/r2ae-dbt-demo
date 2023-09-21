@@ -36,3 +36,12 @@ models:
     # Applies to all files under models/example/
     example:
       materialized: view
+    raw:
+      schema: raw
+      materialized: view
+    tnfm:
+      materialized: table
+      schema: tnfm
+
+seeds:
+  schema: raw
