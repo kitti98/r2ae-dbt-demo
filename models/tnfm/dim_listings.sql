@@ -9,7 +9,8 @@ SELECT
      listing_name,
      listing_url,
      room_type,
-     CAST(REPLACE(REPLACE(price_str,'$',''),',','') AS DECIMAL(10,2)) AS price,
+     {{ change_dollar_sign_to_decimal("price_str", "decimal") }},
+     {{ change_dollar_sign_to_decimal("price_str", "integer") }},
      src.neighbourhood AS neighbourhood,
      nbh.neighbourhood_group AS tier
 FROM
